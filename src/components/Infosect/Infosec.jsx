@@ -29,7 +29,8 @@ import swahilipot from  "../../assets/images/sponsors/swahilipot.png"
 import tactive from  "../../assets/images/sponsors/tactive.png"
 // import TUL from  "../../assets/images/sponsors/taifa unga logo.png"
 import taifa from  "../../assets/images/sponsors/taifa.png"
-
+// import "../../assets/scss/theme.scss"
+import "../../assets/css/theme.css"
 
 const Infosec = () => {
 
@@ -115,7 +116,7 @@ const Infosec = () => {
           {/* <!--//col--> */}
         </div>
         {/* <!--//row--> */}
-      </div>Name
+      </div>
       {/* <!--//container--> */}
     </section>
     {/* <!--//venue-section--> */}

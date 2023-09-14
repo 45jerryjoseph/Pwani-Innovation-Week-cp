@@ -1712,7 +1712,7 @@ progress {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-    .form-control: :-webkit-file-upload-button {
+    .form-control::-webkit-file-upload-button {
     -webkit-transition: none;
     transition: none;
 }
@@ -2028,7 +2028,7 @@ textarea.form-control-lg {
     appearance: none;
 }
 @media (prefers-reduced-motion: reduce) {
-    .form-range: :-webkit-slider-thumb {
+    .form-range::-webkit-slider-thumb {
     -webkit-transition: none;
     transition: none;
 }
@@ -2056,7 +2056,7 @@ textarea.form-control-lg {
     appearance: none;
 }
 @media (prefers-reduced-motion: reduce) {
-    .form-range: :-moz-range-thumb {
+    .form-range::-moz-range-thumb {
     -moz-transition: none;
     transition: none;
 }
@@ -3912,7 +3912,7 @@ textarea.form-control-lg {
     transition: var(--bs-accordion-btn-icon-transition);
 }
 @media (prefers-reduced-motion: reduce) {
-    .accordion-button: :after {
+    .accordion-button::after {
     transition: none;
 }
 }.accordion-button:hover {
@@ -6147,6 +6147,7 @@ textarea.form-control-lg {
     --bs-aspect-ratio:  calc(3 / 4 * 100%);
 }
 .ratio-16x9 {
+    /* border: 3px solid red; */
     --bs-aspect-ratio:  calc(9 / 16 * 100%);
 }
 .ratio-21x9 {

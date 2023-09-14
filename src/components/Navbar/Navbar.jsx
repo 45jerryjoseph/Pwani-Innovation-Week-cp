@@ -1,9 +1,47 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import logo from "../../logo.png"
 import "../../assets/scss/theme.scss"
+import "../../assets/css/theme.css"
+// import headerAnimation from '../../assets/js/main.js'
+// import "../../assets/js/main.js"
+
 function Navbar() {
+
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const headerAnimation = () => {
+      const header = headerRef.current;
+      const scrollTop = window.scrollY;
+      
+      if (header) {
+        if (scrollTop > 100) {
+          // console.log("Here point");
+          header.classList.add('header-shrink');
+        } else {
+          header.classList.remove('header-shrink');
+        }
+      } else {
+        // console.log("Error here");
+      }
+    };
+
+    // Attach the headerAnimation function to various window events
+    window.addEventListener('load', headerAnimation);
+    window.addEventListener('resize', headerAnimation);
+    window.addEventListener('scroll', headerAnimation);
+
+    // Cleanup event listeners when the component unmounts
+    return () => {
+      window.removeEventListener('load', headerAnimation);
+      window.removeEventListener('resize', headerAnimation);
+      window.removeEventListener('scroll', headerAnimation);
+    };
+  }, []);
+
+
   return (
-    <header id="header" className="header fixed-top">
+    <header id="header" className="header fixed-top" ref={headerRef}>
       <div className="branding">
         <div className="container-fluid">
           <nav className="main-nav navbar navbar-expand-lg">

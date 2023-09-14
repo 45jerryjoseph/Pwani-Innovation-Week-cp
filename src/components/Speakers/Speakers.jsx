@@ -1,11 +1,12 @@
 import React from 'react'
 import "../../assets/scss/theme.scss"
+import "../../assets/css/theme.css"
 
 const Speakers = () => {
   return (
     <>
         {/* <!-- Speakers Images --> */}
-        <section id="speakers-section" NameclassName="speakers-section section">
+        <section id="speakers-section" className="speakers-section section">
         <div class="container">
             <h3 className="section-heading text-center mb-3">Speakers</h3>
             <div className="section-intro text-center single-col-max mx-auto mb-5">

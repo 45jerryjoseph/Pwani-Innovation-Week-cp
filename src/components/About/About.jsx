@@ -1,8 +1,43 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "../../assets/scss/theme.scss"
 import "../../assets/css/custom.css"
+import "../../assets/css/theme.css"
+// import countdownTime from '../../assets/js/main.js'
+// import timer from "../../assets/js/main.js"
+// import "../../assets/js/main.js"
+
 
 const About = () => {
+
+  const [days, setDays] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    const targetDate = new Date('2023-10-2').getTime(); // Replace with your target date
+    const updateCountdown = () => {
+      const currentDate = new Date().getTime();
+      const secondsLeft = (targetDate - currentDate) / 1000;
+
+      const daysCount = Math.floor(secondsLeft / 86400);
+      const hoursCount = Math.floor((secondsLeft % 86400) / 3600);
+      const minutesCount = Math.floor((secondsLeft % 3600) / 60);
+      const secondsCount = Math.floor(secondsLeft % 60);
+
+      setDays(daysCount);
+      setHours(hoursCount);
+      setMinutes(minutesCount);
+      setSeconds(secondsCount);
+    };
+
+    const countdownInterval = setInterval(updateCountdown, 1000);
+
+    return () => {
+      clearInterval(countdownInterval);
+    };
+  }, []);
+
   return (
    <>
     {/* <!-- About Sesion --> */}
@@ -42,8 +77,29 @@ const About = () => {
         <div className="event-countdown text-center mb-3">
           <h4 className="countdown-intro mb-2 text-center mb-3">
             Pwani Innovation Week 2023 Starts In:
-          </h4>
-          <div id="countdown-box" class="countdown-box"></div>
+          </h4>  
+          <div id="countdown-box" class="countdown-box" style={{display:"flex",justifyContent:"center",alignItems:"center"}} >
+            <div className="countdown-item" style={{margin:"5px 20px"}}>
+              <span className="number">{days}</span>
+              <br/>
+              <span className="unit">Days</span>
+            </div>
+            <div className="countdown-item"style={{margin:"5px 20px"}}>
+              <span className="number">{hours}</span>
+              <br/>
+              <span className="unit">Hrs</span>
+            </div>
+            <div className="countdown-item"style={{margin:"5px 20px"}}>
+              <span className="number">{minutes}</span>
+              <br/>
+              <span className="unit">Mins</span>
+            </div>
+            <div className="countdown-item"style={{margin:"5px 20px"}}>
+              <span className="number">{seconds}</span>
+              <br/>
+              <span className="unit">Secs</span>
+            </div>
+          </div>
         </div>
         {/* <!--//event-countdown--> */}
         <div className="about-cta text-center mb-5">
@@ -67,7 +123,7 @@ const About = () => {
           </div>
           <div className="row gx-md-5">
             <div className="col-12 col-md-6 mb-3">
-              <div className="ratio ratio-16x9">
+            <div class="ratio ratio-16x9">
                 <iframe
                   title='pre'
                   src="https://www.youtube.com/embed/vZkYJ5IZlJM?si=CwvlSL62DiR7-TDO"
@@ -81,7 +137,8 @@ const About = () => {
             <div className="col-12 col-md-6 mb-md-5">
               <div className="ratio ratio-16x9">
                 <iframe
-                title='pre'
+                  title='pre'
+                  // width={"30px"}
                   src="https://www.youtube.com/embed/BFcBapJeS5M?si=ERles6T64GgbvB3B"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen

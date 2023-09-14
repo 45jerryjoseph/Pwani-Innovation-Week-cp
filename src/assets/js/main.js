@@ -1,5 +1,6 @@
 "use strict";
 
+
 /* ======= Header animation ======= */   
 const header = document.getElementById('header');  
 
@@ -20,20 +21,22 @@ window.onscroll=function()
     headerAnimation(); 
 
 }; 
+
+
+const headerAnimation = () => {
     
-
-function headerAnimation () {
-
     var scrollTop = window.scrollY;
 	
-	if ( scrollTop > 100 ) {	    
+	if ( scrollTop > 100 ) {	 
+        console.log("Here point")   
 	    header.classList.add('header-shrink');    
-	    	    
+        
 	} else {
-	    header.classList.remove('header-shrink');
+        header.classList.remove('header-shrink');
 	}
-
+    
 };
+export default headerAnimation;
 
 /* ===== Smooth scrolling ====== */
 /*  Note: You need to include smoothscroll.min.js (smooth scroll behavior polyfill) on the page to cover some browsers */
@@ -44,11 +47,11 @@ let scrollLinks = document.querySelectorAll('.scrollto');
 const pageNavWrapper = document.getElementById('navigation');
 
 scrollLinks.forEach((scrollLink) => {
-
-	scrollLink.addEventListener('click', (e) => {
-		
-		e.preventDefault();
-
+    
+    scrollLink.addEventListener('click', (e) => {
+        
+        e.preventDefault();
+        
 		let element = document.querySelector(scrollLink.getAttribute("href"));
 		
 		const yOffset = 69; //page .header height
@@ -69,7 +72,7 @@ scrollLinks.forEach((scrollLink) => {
     });
 	
 });
-    
+
 
 /* ===== Gumshoe SrollSpy ===== */
 /* Ref: https://github.com/cferdinandi/gumshoe  */
@@ -77,15 +80,15 @@ scrollLinks.forEach((scrollLink) => {
 
 
 // Initialize Gumshoe
-var spy = new Gumshoe('#navigation a', {
-	offset: 69 //page .header heights
-});
-
-
-/* ======= Countdown ========= */
+// var spy = new Gumshoe.init('#navigation a', {
+    // 	offset: 69 //page .header heights
+    // });
+    
+    
+    /* ======= Countdown ========= */
 // set the date we're counting down to
 var target_date = new Date("Oct 2, 2023").getTime();
- 
+
 // variables for time units
 var days, hours, minutes, seconds;
  
@@ -103,28 +106,32 @@ countdown.appendChild(minutes_span);
 var secs_span = document.createElement("SPAN");
 secs_span.className = 'secs';
 countdown.appendChild(secs_span);
- 
-// update the tag with id "countdown" every 1 second
-setInterval(function () {
- 
+
+
+const countdownTime = () =>{
     // find the amount of "seconds" between now and target
     var current_date = new Date().getTime();
     var seconds_left = (target_date - current_date) / 1000;
- 
-    // do some time calculations
-    days = parseInt(seconds_left / 86400);
-    seconds_left = seconds_left % 86400;
+    
+     // do some time calculations
+     days = parseInt(seconds_left / 86400);
+     seconds_left = seconds_left % 86400;
+      
+     hours = parseInt(seconds_left / 3600);
+     seconds_left = seconds_left % 3600;
+      
+     minutes = parseInt(seconds_left / 60);
+     seconds = parseInt(seconds_left % 60);
      
-    hours = parseInt(seconds_left / 3600);
-    seconds_left = seconds_left % 3600;
+     // format countdown string + set tag value.
+     days_span.innerHTML = '<span class="number">' + days + '</span>' + '<span class="unit">Days</span>';
+     hours_span.innerHTML = '<span class="number">' + hours + '</span>' + '<span class="unit">Hrs</span>';
+     minutes_span.innerHTML = '<span class="number">' + minutes + '</span>' + '<span class="unit">Mins</span>';
+     secs_span.innerHTML = '<span class="number">' + seconds + '</span>' + '<span class="unit">Secs</span>'; 
      
-    minutes = parseInt(seconds_left / 60);
-    seconds = parseInt(seconds_left % 60);
-     
-    // format countdown string + set tag value.
-    days_span.innerHTML = '<span class="number">' + days + '</span>' + '<span class="unit">Days</span>';
-    hours_span.innerHTML = '<span class="number">' + hours + '</span>' + '<span class="unit">Hrs</span>';
-    minutes_span.innerHTML = '<span class="number">' + minutes + '</span>' + '<span class="unit">Mins</span>';
-    secs_span.innerHTML = '<span class="number">' + seconds + '</span>' + '<span class="unit">Secs</span>'; 
- 
-}, 1000);
+    }
+    // export default {headerAnimation,countdownTime};
+// export default headerAnimation;
+
+    // update the tag with id "countdown" every 1 second
+// setInterval(countdownTime(), 1000);

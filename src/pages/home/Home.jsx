@@ -8,6 +8,8 @@ import Schedule from '../../components/Schedule/Schedule'
 import Ticketcards from '../../components/Ticketcards/Ticketcards'
 import Infosec from '../../components/Infosect/Infosec'
 import Footer from '../../components/Footer/Footer'
+// import "../../assets/js/main.js"
+
 
 const Home = () => {
   return (
