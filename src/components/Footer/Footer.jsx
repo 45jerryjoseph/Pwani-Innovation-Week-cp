@@ -1,6 +1,10 @@
 import React from 'react'
 import "../../assets/scss/theme.scss"
 import "../../assets/css/theme.css"
+import MailIcon from '@mui/icons-material/Mail';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 const Footer = () => {
   return (
     <>
@@ -9,16 +13,16 @@ const Footer = () => {
       <div class="container text-center">
         <ul class="social-list list-inline mb-4">
           <li class="list-inline-item me-3">
-            <a href="#"><i class="fas fa-envelope"></i></a>
+            <a href="#"><MailIcon className='fa-fw'/></a>
           </li>
           <li class="list-inline-item me-3">
-            <a href="#"><i class="fab fa-twitter fa-fw"></i></a>
+            <a href="#"><TwitterIcon className='fa-fw' /></a>
           </li>
           <li class="list-inline-item me-3">
-            <a href="#"><i class="fab fa-instagram fa-fw"></i></a>
+            <a href="#"><InstagramIcon className='fa-fw'/></a>
           </li>
           <li class="list-inline-item me-0">
-            <a href="#"><i class="fab fa-youtube fa-fw"></i></a>
+            <a href="#"><YouTubeIcon  className='fa-fw'/></a>
           </li>
         </ul>
         {/* <!--//social-list--> */}

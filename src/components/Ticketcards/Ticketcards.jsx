@@ -1,6 +1,9 @@
 import React from 'react'
 import "../../assets/scss/theme.scss"
 import "../../assets/css/theme.css"
+import PortraitOutlinedIcon from '@mui/icons-material/PortraitOutlined';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import Groups2Icon from '@mui/icons-material/Groups2';
 const Ticketcards = () => {
   return (
     <>
@@ -140,17 +143,17 @@ const Ticketcards = () => {
           >
             <li>
               <span className="icon-holder me-2"
-                ><i className="fas fa-user-tie"></i></span
+                ><PortraitOutlinedIcon /></span
               >60+ talks from industry-leading speakers
             </li>
             <li>
               <span className="icon-holder me-2"
-                ><i className="fas fa-people-carry"></i></span
+                ><Groups2Icon /></span
               >Access to 40+ workshops
             </li>
             <li>
               <span className="icon-holder me-2"
-                ><i className="fas fa-utensils"></i></span
+                ><RestaurantIcon /></span
               >FREE drinks, refreshments and lunch
             </li>
           </ul>

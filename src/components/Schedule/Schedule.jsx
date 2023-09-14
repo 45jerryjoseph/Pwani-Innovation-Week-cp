@@ -154,7 +154,6 @@ const Schedule = () => {
               </h4>
             </div>
             {/* Repeat for other days */}
-          </div>
           {/* day 5 */}
           <div
               className={`tab-pane ${
@@ -167,7 +166,8 @@ const Schedule = () => {
               <h4 className="text-center py-5 text-muted">
                 Day 5 Schedule Will be Updated Soon
               </h4>
-            </div>
+          </div>
+          </div>
             {/* Repeat for other days */}
           
 

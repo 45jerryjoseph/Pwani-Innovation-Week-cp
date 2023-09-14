@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import logo from "../../logo.png"
 import "../../assets/scss/theme.scss"
 import "../../assets/css/theme.css"
+
 // import headerAnimation from '../../assets/js/main.js'
 // import "../../assets/js/main.js"
 

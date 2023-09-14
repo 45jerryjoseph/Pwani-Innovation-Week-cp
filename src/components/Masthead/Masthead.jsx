@@ -3,6 +3,8 @@ import React from 'react'
 // import "../../assets/scss/theme.scss"
 import "../../assets/css/custom.css"
 import "../../assets/css/theme.css"
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const Masthead = () => {
   return (
@@ -12,8 +14,8 @@ const Masthead = () => {
           <div className="col-12 text-center">
             <h1 className="fw-dark">Pwani Innovation Week 2023</h1>
             <p class="lead">
-              <i className="far fa-calendar-alt me-2"></i>2 - 6 Oct
-              <i className="fas fa-map-marker-alt mx-2"></i>Mombasa, Kenya
+              <CalendarMonthOutlinedIcon className='mx-2'/>2 - 6 Oct
+              <LocationOnIcon className='mx-2'/>Mombasa, Kenya
             </p>
             <p classNam="lead">
               Sailing Beyond Borders: Empowering Youth in the Digital Economy
